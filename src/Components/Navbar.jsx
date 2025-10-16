@@ -1,111 +1,213 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-transparent ">
-      <nav className="h-[11vh] flex justify-between items-center px-6 py-3 text-white font-medium font-[inter] text-[16px] bg-transparent backdrop-blur-md">
-        
-        <div>
-          <img className="h-[5vh] w-[14vw] " src={logo} alt="Logo" />
+    <div className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
+      <nav className="h-[11vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
+
+        {/* Left Side */}
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <Link to="/">
+            <img className="h-[6vh] w-auto" src={logo} alt="Logo" />
+          </Link>
+
+          {/* Hamburger Icon (Mobile) */}
+          <div
+            className="md:hidden text-2xl cursor-pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </div>
         </div>
 
-        <div>
-          <ul className="flex space-x-6 items-center">
-            <li className="relative group/nav p-6">
-              <button className="navbarLinks flex items-center">
-                Services
-                <svg
-                  className="w-4 h-4 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+        <ul
+          className={`flex flex-col md:flex-row md:space-x-6 text-[15px] font-light 
+            md:static absolute bg-black/70 md:bg-transparent backdrop-blur-xl 
+            md:backdrop-blur-0 w-full md:w-auto left-0 top-[11vh] md:top-0 
+            md:opacity-100 transition-all duration-300 ease-in-out 
+            ${
+              menuOpen
+                ? "opacity-100 visible"
+                : "opacity-0 invisible md:visible"
+            } md:visible`}
+        >
+          <li className="px-6 md:px-0 py-2 md:py-0">
+            <Link
+              to="/about"
+              className="hover:text-[#ff5521] transition-colors duration-300"
+            >
+              About
+            </Link>
+          </li>
 
-              <div className="fixed left-0 top-[11vh] w-full bg-white shadow-lg text-black z-40 opacity-0 pointer-events-none group-hover/nav:opacity-100 group-hover/nav:pointer-events-auto transition-all duration-300 ease-in-out transform translate-y-2 group-hover/nav:translate-y-0">
-                <div className="px-16 py-10 flex justify-between max-w-7xl mx-auto">
-                  <div>
-                    <h3 className="font-semibold text-lg border-b-2 border-pink-500 inline-block mb-4">
-                      Web Development
-                    </h3>
-                    <ul className="space-y-2">
-                      <li><a href="#" className="hover:text-pink-500">WordPress Website Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Ecommerce Website Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Matrimonial Website Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Web Designing Services</a></li>
-                    </ul>
-                  </div>
+          <li
+            className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("services")}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+          >
+            <span
+              className="hover:text-[#ff5521] transition-colors duration-300 mb-20"
+              onClick={() =>
+                window.innerWidth <= 768 &&
+                setOpenDropdown(openDropdown === "services" ? null : "services")
+              }
+            >
+              Services ▾
+            </span>
 
-                  <div>
-                    <h3 className="font-semibold text-lg border-b-2 border-pink-500 inline-block mb-4">
-                      App Development
-                    </h3>
-                    <ul className="space-y-2">
-                      <li><a href="#" className="hover:text-pink-500">Android App Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Cross-Platform App Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">dApp Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Crowdfunding App Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">API Development</a></li>
-                    </ul>
-                  </div>
+            {openDropdown === "services" && (
+              <div
+                className={`${
+                  window.innerWidth <= 768
+                    ? "static grid-cols-1 p-4 w-[80%] bg-white/10"
+                    : "absolute left-[-200px] top-[40px] w-[1100px] grid-cols-5 p-8"
+                } grid gap-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg 
+                text-white text-[14px] font-light rounded-2xl transition-all duration-300`}
+              >
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    Web Development
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/wordpress">WordPress Website</Link></li>
+                    <li><Link to="/ecommerce">Ecommerce Website</Link></li>
+                    <li><Link to="/matrimonial">Matrimonial Website</Link></li>
+                    <li><Link to="/designing">Web Designing</Link></li>
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="font-semibold text-lg border-b-2 border-pink-500 inline-block mb-4">
-                      Software Development
-                    </h3>
-                    <ul className="space-y-2">
-                      <li><a href="#" className="hover:text-pink-500">Salesforce Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">School Management Software</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Hotel Management Software</a></li>
-                      <li><a href="#" className="hover:text-pink-500">HRM Software Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Shipping Management Software</a></li>
-                      <li><a href="#" className="hover:text-pink-500">MLM Software</a></li>
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    App Development
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/android-app">Android App</Link></li>
+                    <li><Link to="/cross-platform">Cross-Platform</Link></li>
+                    <li><Link to="/dapp">dApp Development</Link></li>
+                    <li><Link to="/api">API Development</Link></li>
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="font-semibold text-lg border-b-2 border-pink-500 inline-block mb-4">
-                      Digital Marketing
-                    </h3>
-                    <ul className="space-y-2">
-                      <li><a href="#" className="hover:text-pink-500">ASO Services</a></li>
-                      <li><a href="#" className="hover:text-pink-500">SEO Services</a></li>
-                      <li><a href="#" className="hover:text-pink-500">SMO Services</a></li>
-                      <li><a href="#" className="hover:text-pink-500">PPC Marketing Services</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Content Marketing Services</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Performance Marketing Company</a></li>
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    Software Development
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/school-software">School Management</Link></li>
+                    <li><Link to="/hotel-software">Hotel Management</Link></li>
+                    <li><Link to="/hrm">HRM Software</Link></li>
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="font-semibold text-lg border-b-2 border-pink-500 inline-block mb-4">
-                      Latest Technology
-                    </h3>
-                    <ul className="space-y-2">
-                      <li><a href="#" className="hover:text-pink-500">IoT Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Augmented Reality App Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Virtual Reality App Development</a></li>
-                      <li><a href="#" className="hover:text-pink-500">Metaverse App Development</a></li>
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    Digital Marketing
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/seo">SEO Services</Link></li>
+                    <li><Link to="/smo">SMO Services</Link></li>
+                    <li><Link to="/content">Content Marketing</Link></li>
+                  </ul>
+                </div>
+
+               
+              </div>
+            )}
+          </li>
+
+          <li
+            className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("games")}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+          >
+            <span
+              className="hover:text-[#ff5521] transition-colors duration-300"
+              onClick={() =>
+                window.innerWidth <= 768 &&
+                setOpenDropdown(openDropdown === "games" ? null : "games")
+              }
+            >
+              Games ▾
+            </span>
+
+            {openDropdown === "games" && (
+              <div
+                className={`${
+                  window.innerWidth <= 768
+                    ? "static grid-cols-1 p-4 w-full bg-white/10"
+                    : "absolute left-[-100px] top-[40px] w-[700px] grid-cols-3 p-8"
+                } grid gap-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg 
+                text-white text-[14px] font-light rounded-2xl transition-all duration-300`}
+              >
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    Mobile Games
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/unity-games">Unity Games</Link></li>
+                    <li><Link to="/2d-games">2D Game Development</Link></li>
+                    <li><Link to="/3d-games">3D Game Development</Link></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    PC / Web Games
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/web-games">Web Browser Games</Link></li>
+                    <li><Link to="/metaverse-games">Metaverse Games</Link></li>
+                  </ul>
+                </div>
+
+                {/* Column 3 */}
+                <div>
+                  <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
+                    Console / VR
+                  </h3>
+                  <ul className="space-y-1">
+                    <li><Link to="/vr-games">Virtual Reality Games</Link></li>
+                    <li><Link to="/ar-games">Augmented Reality Games</Link></li>
+                  </ul>
                 </div>
               </div>
-            </li>
+            )}
+          </li>
 
-            <li><Link to="/about" className="navbarLinks">About</Link></li>
-            <li><Link to="/portfolio" className="navbarLinks">Portfolio</Link></li>
-            <li><Link to="/career" className="navbarLinks">Career</Link></li>
-            <li><Link to="/blog" className="navbarLinks">Blog</Link></li>
-          </ul>
-        </div>
+          <li className="px-6 md:px-0 py-2 md:py-0">
+            <Link to="/portfolio" className="hover:text-[#ff5521] transition-colors duration-300">
+              Portfolio
+            </Link>
+          </li>
 
-        <div>
-          <button className="button type1">Contact Us</button>
+          <li className="px-6 md:px-0 py-2 md:py-0">
+            <Link to="/career" className="hover:text-[#ff5521] transition-colors duration-300">
+              Career
+            </Link>
+          </li>
+
+          <li className="px-6 md:px-0 py-2 md:py-0">
+            <Link to="/blog" className="hover:text-[#ff5521] transition-colors duration-300">
+              Blog
+            </Link>
+          </li>
+        </ul>
+
+        <div className="hidden md:block">
+          <Link
+            to="/contact"
+            className="bg-[#ff5521] text-white px-5 py-2.5 rounded-sm font-sm
+              hover:bg-[#ff6b3d] transition-all duration-300 hover:scale-105 
+              shadow-md hover:shadow-orange-500/40"
+          >
+            Contact Us
+          </Link>
         </div>
       </nav>
     </div>

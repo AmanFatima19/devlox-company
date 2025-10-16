@@ -1,6 +1,6 @@
-import React from 'react'
-import { Gamepad2, Globe, Smartphone } from 'lucide-react'
-import ServiceCard from './ServiceCard'
+import React from "react";
+import { Gamepad2, Globe, Smartphone } from "lucide-react";
+import ServiceCard from "./ServiceCard";
 
 const ServicesSection = () => {
   const serviceCategories = [
@@ -41,18 +41,23 @@ const ServicesSection = () => {
         { name: "App Optimization", to: "/app-optimization" },
       ],
     },
-  ]
+  ];
 
   return (
-    <div className="pt-20">
+    <div className="bg-black text-white py-20 px-6 sm:px-10 lg:px-16">
       <div className="flex flex-col items-center text-center">
-        <h1 className="heading">Our Services</h1>
-        <p className="subText text-black">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide font-[inter] text-white">
+          OUR SERVICES
+        </h1>
+        <p className="text-gray-400 mt-3 text-sm sm:text-base tracking-wide max-w-xl">
           Comprehensive digital solutions tailored to your needs
         </p>
       </div>
 
-      <div className="flex gap-7 mt-6 justify-center mx-4">
+      <div
+        className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 
+                   justify-items-center max-w-7xl mx-auto"
+      >
         {serviceCategories.map((category, index) => (
           <ServiceCard
             key={index}
@@ -63,7 +68,7 @@ const ServicesSection = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesSection
+export default ServicesSection;

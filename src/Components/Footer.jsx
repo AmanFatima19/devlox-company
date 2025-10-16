@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0b0b0b] text-white px-8 md:px-16 lg:px-24 py-16 font-poppins">
+    <footer className="bg-[#0b0b0b] text-white px-8 md:px-16 lg:px-24 py-16 font-poppins  border-t border-[#ff5521]/20 shadow-[0_-6px_15px_rgba(255,85,33,0.1)]">
       <div className="flex flex-wrap justify-between gap-12">
         <div className="w-full md:w-[25%] space-y-6">
           <img src={logo} alt="Kevuru Games" className="w-36" />
@@ -77,8 +77,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center text-gray-500 text-sm mt-12 border-t border-gray-800 pt-6">
-        © 2025 Kevuru Games. All rights reserved.
+      <div className="text-center text-gray-500 text-sm mt-12 border-t border-gray-500 pt-6">
+        © 2025 <span className="text-[#ff5521] ">Devlox</span> Games. All rights reserved.
       </div>
     </footer>
   );

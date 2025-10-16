@@ -1,29 +1,37 @@
-import React from 'react'
-import bgImage from "../assets/backgrounds/bg-pg2.png"
-import img1 from "../../assets dummy/Downloaded Assets/1.png"
-import img2 from "../../assets dummy/Downloaded Assets/2.png"
-import img3 from "../../assets dummy/Downloaded Assets/3.png"
-import img4 from "../../assets dummy/Downloaded Assets/4.png"
-import map from "../assets/map.png"
+import React from "react";
+import bgImage from "../assets/backgrounds/bg-pg2.png";
+import map from "../assets/map.png";
+
 const ClientsSection = () => {
   return (
-    <div className='h-screen w-screen' style={{ backgroundImage: `url(${bgImage})` }}>
-       <div className="w-full flex justify-center items-center px-10">
-        <div className=' pt-20 px-10'>
-            <h1 className='heading text-white'>
-                Our Awards & Recognition
-            </h1>
-            <p className='subText mt-2'  >
-                Our dedication to excellence has earned us global recognition and numerous industry awards. The company’s achievements highlight the team’s commitment to quality and innovation, gaining the trust of top-tier clients worldwide.
-            </p>
-      </div>
-        {/* RIGHT MAP */}
-        <div className="  w-[50vw] pt-50">
-          <img src={map} alt="Map" className="w-[90%] h-auto object-contain" />
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-6 sm:px-10 py-16 sm:py-20"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-7xl gap-12">
+        <div className="text-center lg:text-left lg:w-1/2">
+          <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold font-[Inter] leading-snug">
+            Our Awards & Recognition
+          </h1>
+          <p className="text-gray-300 mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Our dedication to excellence has earned us global recognition and numerous
+            industry awards. The company’s achievements highlight the team’s commitment
+            to quality and innovation, gaining the trust of top-tier clients worldwide.
+          </p>
         </div>
-        </div>
-    </div>
-  )
-}
 
-export default ClientsSection
+        <div className="flex justify-center lg:justify-end lg:w-1/2">
+          <img
+            src={map}
+            alt="Global Awards Map"
+            className="w-[90%] sm:w-[80%] lg:w-[85%] h-auto object-contain"
+          />
+        </div>
+      </div>
+
+     
+    </div>
+  );
+};
+
+export default ClientsSection;

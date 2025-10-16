@@ -6,7 +6,11 @@ const ServiceCard = ({ title, icon, services }) => {
   return (
     <div>
       <div
-        className="w-full h-[420px] bg-transparent border border-gray-200 rounded-lg shadow-sm sm:p-5 dark:bg-gray-800 transition-transform transform hover:scale-[1.03] ease-out duration-500 hover:border-[#ff5521] flex flex-col justify-between"
+        className="w-full h-[420px] rounded-2xl shadow-md p-5 sm:p-6 
+                   border border-white/20 
+                   backdrop-blur-md bg-white/10 
+                   transition-transform transform hover:scale-[1.03] ease-out duration-500 
+                   hover:border-[#ff5521] flex flex-col justify-between"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -15,23 +19,24 @@ const ServiceCard = ({ title, icon, services }) => {
         }}
       >
         <div>
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-3">
             {icon}
-            <h5 className="text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+            <h5 className="text-lg sm:text-xl font-semibold text-white ml-1">
               {title}
             </h5>
           </div>
 
-          <p className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-3">
+          <p className="text-sm text-gray-300 mb-3">
             Explore our professional {title.toLowerCase()} services.
           </p>
 
-          <ul className="space-y-1.5">
+          <ul className="space-y-2">
             {services.map((service) => (
               <li key={service.to}>
                 <Link
                   to={service.to}
-                  className="flex items-center py-1 text-[15px] font-semibold text-gray-900 dark:text-white transition-all duration-300 hover:text-[#ff5521] group"
+                  className="flex items-center py-1 text-[15px] font-semibold text-white 
+                             transition-all duration-300 hover:text-[#ff5521] group"
                 >
                   <span className="relative inline-block">
                     {service.name}
@@ -43,15 +48,7 @@ const ServiceCard = ({ title, icon, services }) => {
           </ul>
         </div>
 
-        {/* Moved to bottom, no underline */}
-        <div className="mt-4 text-left">
-          <Link
-            to="/contact"
-            className="text-xs font-normal text-gray-500 hover:text-[#ff5521] transition-all duration-300 dark:text-gray-400"
-          >
-            Want to discuss your project with us?
-          </Link>
-        </div>
+       
       </div>
     </div>
   )
