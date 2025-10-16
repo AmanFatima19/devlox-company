@@ -15,12 +15,12 @@ function Home() {
         <div>
           <HeroSection />
           <CompanyProfile />
-          <PortfolioSection />
           <ServicesSection />
+          <PortfolioSection />
           <ClientsSection />
+          <TestimonialSection />
           <IdeaDiscussForm />
           <BlogsSection />
-          <TestimonialSection />
           <ContactForm/>
         </div>
      
