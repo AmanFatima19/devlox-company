@@ -26,13 +26,13 @@ const Portfolio = () => {
   return (
 <div className='' >
       <div className=''>
-      <div className=' overflow-hidden relative h-[50vh] sm:h-[40vh] md:h-[60vh] flex-col  justify-center items-center'>
-        <img src={mainImage} alt="" className='w-auto h-[100vh] md:h-[100vh] object-fill ' />
+      <div className=' overflow-hidden relative  h-[40vh] md:h-[60vh] flex-col  justify-center items-center'>
+        <img src={mainImage} alt="" className=' h-full w-auto md:w-full md:h-full object-cover object-center ' />
 
-        <div className='absolute left-5 top-0 flex flex-col  w-full h-full  px-6 flex-col items-center justify-center'>
+        <div className='absolute left-5 top-0 flex flex-col  w-full h-full  px-6 md:pd-8 flex-col items-center justify-center'>
         <h1 className=' font-extrabold 
           text-6xl sm:text-3xl md:text-5xl lg:text-6xl 
-          w-full sm:w-[85%] md:w-[60%] lg:w-[45%] text-white text-center'>OUR PORTFOLIO</h1>
+          w-[85%] md:w-[60%] lg:w-[45%] text-white text-center'>OUR PORTFOLIO</h1>
         <p className=' text-white  mt-2 text-sm sm:text-base md:text-sm tracking-wide 
           w-full sm:w-[80%] md:w-[55%] lg:w-[30%] text-gray-200 text-center'>
           We craft high-quality game assets and immersive experiences, aligning with our clients’ vision! Hope you will enjoy our latest portfolio!
