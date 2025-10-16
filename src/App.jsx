@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 import Career from './pages/Career'
 import Blog from './pages/Blog'
 import Footer from './Components/Footer'
+import Navbar from './Components/Navbar'
 import Portfolio from './pages/Portfolio'
 
 function App() {

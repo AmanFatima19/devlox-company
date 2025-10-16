@@ -11,13 +11,11 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
       <nav className="h-[11vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
 
-        {/* Left Side */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/">
             <img className="h-[6vh] w-auto" src={logo} alt="Logo" />
           </Link>
 
-          {/* Hamburger Icon (Mobile) */}
           <div
             className="md:hidden text-2xl cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
