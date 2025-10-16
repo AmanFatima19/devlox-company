@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import whitelogo from "../assets/white_devlox.png";
+import logoicon from "../assets/logo-icon.png";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -11,13 +12,14 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
       <nav className="h-[11vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
 
-        {/* Logo + Menu Icon */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/">
-            <img className="h-[6vh] w-auto" src={logo} alt="Logo" />
+            <img className="h-[5vh] w-auto mr-2" src={logoicon} alt="Logoicon" />
           </Link>
 
-          {/* Mobile menu toggle */}
+          <Link to="/">
+            <img className="h-[3vh] w-auto" src={whitelogo} alt="Logo" />
+          </Link>
           <div
             className="md:hidden text-2xl cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -26,7 +28,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ✅ Added flex-grow and justify-start for desktop to move links right after logo */}
         <ul
           className={`flex flex-col md:flex-row md:space-x-6 text-[15px] font-light 
             md:static absolute bg-black/70 md:bg-transparent backdrop-blur-xl 
@@ -48,7 +49,6 @@ const Navbar = () => {
             </Link>
           </li>
 
-          {/* Services Dropdown */}
           <li
             className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
             onMouseEnter={() =>
@@ -128,7 +128,6 @@ const Navbar = () => {
             )}
           </li>
 
-          {/* Games Dropdown */}
           <li
             className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
             onMouseEnter={() =>
@@ -191,7 +190,6 @@ const Navbar = () => {
             )}
           </li>
 
-          {/* Remaining Links */}
           <li className="px-6 md:px-0 py-2 md:py-0">
             <Link to="/portfolio" className="hover:text-[#ff5521] transition-colors duration-300">
               Portfolio
@@ -211,7 +209,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Contact Button (Right Side) */}
         <div className="hidden md:block">
           <Link
             to="/contact"

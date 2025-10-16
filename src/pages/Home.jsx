@@ -6,6 +6,7 @@ import ServicesSection from "../Components/ServicesSection";
 import PortfolioSection from "../Components/PortfolioSection";
 import TestimonialSection from "../Components/TestimonialSection";
 import IdeaDiscussForm from "../Components/IdeaDiscussForm";
+import ContactForm from "../Components/ContactForm";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
           <IdeaDiscussForm />
           <BlogsSection />
           <TestimonialSection />
+          <ContactForm/>
         </div>
      
     </>

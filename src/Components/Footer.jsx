@@ -1,12 +1,16 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import whitelogo from "../assets/white_devlox.png";
+import logoicon from "../assets/logo-icon.png";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0b0b0b] text-white px-8 md:px-16 lg:px-24 py-16 font-poppins  border-t border-[#ff5521]/20 shadow-[0_-6px_15px_rgba(255,85,33,0.1)]">
       <div className="flex flex-wrap justify-between gap-12">
         <div className="w-full md:w-[25%] space-y-6">
-          <img src={logo} alt="Kevuru Games" className="w-36" />
+            <div className="flex items-center gap-2">
+          <img src={logoicon} alt="Kevuru Games" className="h-[5vh]" />
+          <img src={whitelogo} alt="Kevuru Games" className="h-[4vh]" />
+          </div>
           <div className="space-y-3 text-gray-400 text-sm">
             <p>al. Jana Pawła II 61, lok.241, biuro 1.7,<br />Warsaw, 01-031, Poland</p>
             <p>Phone: +48 22 419 38 000</p>

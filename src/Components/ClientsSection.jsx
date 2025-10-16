@@ -1,12 +1,10 @@
 import React from "react";
-import bgImage from "../assets/backgrounds/bg-pg2.png";
 import map from "../assets/map.png";
 
 const ClientsSection = () => {
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-6 sm:px-10 py-16 sm:py-20"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="bg-black min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-6 sm:px-10 py-10 sm:py-20"
     >
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-7xl gap-12">
         <div className="text-center lg:text-left lg:w-1/2">
