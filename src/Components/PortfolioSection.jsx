@@ -32,7 +32,7 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <div className="relative bg-black text-white min-h-screen py-20 px-6 sm:px-10 lg:px-20 flex flex-col items-center bg-cover bg-center bg-no-repeat">
+    <div className="relative bg-black text-white min-h-screen py-10 px-6 sm:px-10 lg:px-20 flex flex-col items-center bg-cover bg-center bg-no-repeat">
       <div className="text-center max-w-2xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-[inter] mb-2">
           OUR PORTFOLIO

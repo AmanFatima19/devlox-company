@@ -1,6 +1,5 @@
 import React from "react";
 import blogImage from "../../assets dummy/Downloaded Assets/blogimage.webp";
-import bgImage from "../assets/backgrounds/bg-pg2.png"; 
 const BlogsSection = () => {
   const blogs = [
     {
@@ -38,10 +37,8 @@ const BlogsSection = () => {
   ];
 
   return (
-    <div className=" text-white py-16 px-6 sm:px-10 lg:px-20 min-h-screen flex flex-col items-center"
-     style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
+    <div className="bg-black text-white py-16 px-6 sm:px-10 lg:px-20 min-h-screen flex flex-col items-center"
+    
       >
       <div className="text-center max-w-2xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide text-white font-[inter]">

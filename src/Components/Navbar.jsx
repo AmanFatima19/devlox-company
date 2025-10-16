@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import whitelogo from "../assets/white_devlox.png";
+import logoicon from "../assets/logo-icon.png";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -13,9 +14,12 @@ const Navbar = () => {
 
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/">
-            <img className="h-[6vh] w-auto" src={logo} alt="Logo" />
+            <img className="h-[5vh] w-auto mr-2" src={logoicon} alt="Logoicon" />
           </Link>
 
+          <Link to="/">
+            <img className="h-[3vh] w-auto" src={whitelogo} alt="Logo" />
+          </Link>
           <div
             className="md:hidden text-2xl cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -33,7 +37,8 @@ const Navbar = () => {
               menuOpen
                 ? "opacity-100 visible"
                 : "opacity-0 invisible md:visible"
-            } md:visible`}
+            } md:visible
+            md:flex-grow md:justify-start md:ml-8`}
         >
           <li className="px-6 md:px-0 py-2 md:py-0">
             <Link
@@ -46,14 +51,20 @@ const Navbar = () => {
 
           <li
             className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
-            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("services")}
-            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setOpenDropdown("services")
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setOpenDropdown(null)
+            }
           >
             <span
               className="hover:text-[#ff5521] transition-colors duration-300 mb-20"
               onClick={() =>
                 window.innerWidth <= 768 &&
-                setOpenDropdown(openDropdown === "services" ? null : "services")
+                setOpenDropdown(
+                  openDropdown === "services" ? null : "services"
+                )
               }
             >
               Services ▾
@@ -113,16 +124,18 @@ const Navbar = () => {
                     <li><Link to="/content">Content Marketing</Link></li>
                   </ul>
                 </div>
-
-               
               </div>
             )}
           </li>
 
           <li
             className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
-            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("games")}
-            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setOpenDropdown("games")
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setOpenDropdown(null)
+            }
           >
             <span
               className="hover:text-[#ff5521] transition-colors duration-300"
@@ -164,7 +177,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Column 3 */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Console / VR
