@@ -14,12 +14,12 @@ function Home() {
         <div>
           <HeroSection />
           <CompanyProfile />
-          <ClientsSection />
-          <ServicesSection />
-          <BlogsSection />
           <PortfolioSection />
-          <TestimonialSection />
+          <ServicesSection />
+          <ClientsSection />
           <IdeaDiscussForm />
+          <BlogsSection />
+          <TestimonialSection />
         </div>
      
     </>

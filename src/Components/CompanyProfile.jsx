@@ -35,16 +35,13 @@ const CompanyProfile = () => {
       className="min-h-screen bg-cover bg-center bg-no-repeat py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-16"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
-        {/* Left Heading */}
         <div className="lg:w-1/2">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold font-[Inter] tracking-wide leading-snug">
             WHAT MAKES KEVURU A LEADING GAME DEVELOPMENT STUDIO
           </h1>
         </div>
 
-        {/* Right Text */}
         <div className="lg:w-1/2">
           <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             Kevuru Games is dedicated to creating standout games that captivate players worldwide.
@@ -54,7 +51,6 @@ const CompanyProfile = () => {
         </div>
       </div>
 
-      {/* Values Section */}
       <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
         {values.map((item, index) => (
           <div
