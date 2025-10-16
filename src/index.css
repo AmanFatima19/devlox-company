@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+@layer base{
+  *{
+    @apply p-0 m-0;
+  }
+  button{
+    cursor: pointer;
+  }
+  a{
+    cursor: pointer;
+  }
+}
+
+@layer components{
+  .navbarLinks{
+    @apply hover:text-[#ff5521] transition-all duration-400 ease-in-out
+  }
+
+.button {
+  align-items: center;
+  height: 40px;
+  width: 150px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #2AB93C;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+.heading{
+  @apply   text-4xl font-extrabold mb-4  bg-gradient-to-r from-[#ff5521] via-[#f1bea5] to-[#ff5521] bg-clip-text text-transparent inline-block;
+}
+.subText{
+  @apply text-gray-400 mb-12 max-w-2xl mx-auto font-[inter];
+}
+
+}
