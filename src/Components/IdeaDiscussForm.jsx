@@ -47,7 +47,9 @@ const IdeaDiscussForm = () => {
     }
 
     const payload = new FormData();
-    Object.entries(formData).forEach(([key, value]) => payload.append(key, value));
+    Object.entries(formData).forEach(([key, value]) =>
+      payload.append(key, value)
+    );
     if (file) payload.append("attachment", file);
 
     console.log("Form submitted:", {
@@ -73,7 +75,7 @@ const IdeaDiscussForm = () => {
     <section
       className="relative flex items-center justify-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden text-white"
       style={{
-        backgroundImage: `url('idea-bg.png')`, 
+        backgroundImage: `url('idea-bg.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -90,6 +92,7 @@ const IdeaDiscussForm = () => {
         bg-white/10 backdrop-blur-2xl border border-white/20 
         p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-300"
       >
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +103,7 @@ const IdeaDiscussForm = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 text-white">
             Let’s Discuss Your Idea
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-[#ff5521] sm:text-base md:text-lg mb-8 max-w-2xl mx-auto" style={{fontSize:'14px'}}>
             Tell us a bit about your project, and we’ll help you bring your vision to life.
           </p>
         </motion.div>
@@ -113,30 +116,33 @@ const IdeaDiscussForm = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6"
         >
-          {[{ label: "Name", name: "name", type: "text", placeholder: "Your name" },
-            { label: "Email", name: "email", type: "email", placeholder: "you@example.com" }].map(
-            (field, i) => (
-              <motion.div
-                key={field.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 * i }}
-                viewport={{ once: true }}
-              >
-                <label className="block text-sm mb-2 text-gray-300">{field.label}</label>
-                <input
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  value={formData[field.name]}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-3 sm:p-3.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 
+          {[
+            { label: "Name", name: "name", type: "text", placeholder: "Your name" },
+            { label: "Email", name: "email", type: "email", placeholder: "you@example.com" },
+          ].map((field, i) => (
+            <motion.div
+              key={field.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 * i }}
+              viewport={{ once: true }}
+            >
+              <label className="block text-sm mb-2 text-gray-300">
+                {field.label}
+                <span className="text-[#ff5521] ml-1">*</span>
+              </label>
+              <input
+                type={field.type}
+                name={field.name}
+                placeholder={field.placeholder}
+                value={formData[field.name]}
+                onChange={handleChange}
+                required
+                className="w-full p-3 sm:p-3.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 
                 focus:border-[#ff5521] focus:ring-1 focus:ring-[#ff5521]/30 outline-none transition-all text-sm sm:text-base"
-                />
-              </motion.div>
-            )
-          )}
+              />
+            </motion.div>
+          ))}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,7 +151,9 @@ const IdeaDiscussForm = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <label className="block text-sm mb-2 text-gray-300">Project Type</label>
+            <label className="block text-sm mb-2 text-gray-300">
+              Project Type<span className="text-[#ff5521] ml-1">*</span>
+            </label>
             <select
               name="projectType"
               value={formData.projectType}
@@ -160,7 +168,9 @@ const IdeaDiscussForm = () => {
               <option value="animation" className="text-black">3D / Animation</option>
               <option value="uiux" className="text-black">UI / UX Design</option>
             </select>
-            <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">▼</div>
+            <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">
+              ▼
+            </div>
           </motion.div>
 
           <motion.div
@@ -170,7 +180,9 @@ const IdeaDiscussForm = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <label className="block text-sm mb-2 text-gray-300">Budget</label>
+            <label className="block text-sm mb-2 text-gray-300">
+              Budget<span className="text-[#ff5521] ml-1">*</span>
+            </label>
             <select
               name="budget"
               value={formData.budget}
@@ -185,7 +197,9 @@ const IdeaDiscussForm = () => {
               <option value="100k-200k" className="text-black">$ 100k - 200k</option>
               <option value="gt200k" className="text-black">$ &gt; 200k</option>
             </select>
-            <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">▼</div>
+            <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">
+              ▼
+            </div>
           </motion.div>
 
           <motion.div
@@ -195,7 +209,9 @@ const IdeaDiscussForm = () => {
             transition={{ delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <label className="block text-sm mb-2 text-gray-300">Your Message</label>
+            <label className="block text-sm mb-2 text-gray-300">
+              Your Message<span className="text-[#ff5521] ml-1">*</span>
+            </label>
             <textarea
               name="message"
               placeholder="Tell us about your idea..."
