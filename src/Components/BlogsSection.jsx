@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "framer-motion";
 import blogImage from "../../assets dummy/Downloaded Assets/blogimage.webp";
+
 const BlogsSection = () => {
   const blogs = [
     {
@@ -36,23 +38,40 @@ const BlogsSection = () => {
     },
   ];
 
+  // Animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
-    <div className="bg-black text-white py-16 px-6 sm:px-10 lg:px-20 min-h-screen flex flex-col items-center"
-    
+    <div className="bg-black text-white py-16 px-6 sm:px-10 lg:px-20 min-h-screen flex flex-col items-center">
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center max-w-2xl"
       >
-      <div className="text-center max-w-2xl">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide text-white font-[inter]">
           BLOGS
         </h1>
         <p className="text-gray-400 mt-3 text-sm sm:text-base tracking-wide">
           Unlock a world of trends shaping the future of development.
         </p>
-      </div>
+      </motion.div>
 
+      {/* Blog Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10 w-full max-w-7xl">
-        {blogs.map((blog) => (
-          <div
+        {blogs.map((blog, index) => (
+          <motion.div
             key={blog.id}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: index * 0.2 }}
             className="relative rounded-2xl overflow-hidden shadow-md 
                        border border-white/20 bg-white/10 backdrop-blur-md 
                        transform hover:scale-[1.03] 
@@ -75,7 +94,7 @@ const BlogsSection = () => {
                 <p className="text-sm text-gray-300">{blog.description}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

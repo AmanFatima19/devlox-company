@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -30,6 +31,7 @@ const testimonials = [
 const ContactForm = () => {
   const [current, setCurrent] = useState(0);
 
+  // Auto change testimonial every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -38,15 +40,26 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="relative w-full text-white pb-10 pt-16 px-6 md:px-16 flex flex-col md:flex-row gap-6 overflow-hidden">
-
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url("contact-bg.png")` }}
-      ></div>
+    <div
+      className="relative w-full text-white pb-10 pt-16 px-6 md:px-16 flex flex-col md:flex-row gap-6 overflow-hidden bg-black" // ✅ Added bg-black as fallback
+      style={{
+        backgroundImage: `url("contact-bg.png")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* ✅ Permanent dark overlay (no animation) */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
-      <div className="relative z-10 bg-black/30 backdrop-blur-xl text-white w-full md:w-1/2 p-6 rounded-2xl shadow-lg border border-white/20">
+      {/* ✅ Animated Contact Form */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 bg-black/30 backdrop-blur-xl text-white w-full md:w-1/2 p-6 rounded-2xl shadow-lg border border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-500"
+      >
         <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
         <form className="flex flex-col space-y-4">
           <input
@@ -87,9 +100,16 @@ const ContactForm = () => {
             SEND
           </button>
         </form>
-      </div>
+      </motion.div>
 
-      <div className="relative z-10 w-full md:w-1/2 bg-transparent p-6 rounded-lg overflow-hidden">
+      {/* ✅ Animated Testimonials Section */}
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="relative z-10 w-full md:w-1/2 bg-transparent p-6 rounded-lg overflow-hidden"
+      >
         <div className="min-h-[260px] relative">
           {testimonials.map((item, index) => (
             <div
@@ -102,27 +122,29 @@ const ContactForm = () => {
                 <img
                   src={item.img}
                   alt={item.name}
-                  className="w-14 h-14 rounded-full mr-4"
+                  className="w-14 h-14 rounded-full mr-4 object-cover border border-white/20"
                 />
                 <div>
                   <h3 className="text-xl font-semibold">{item.name}</h3>
                   <p className="text-sm text-gray-300">{item.title}</p>
                 </div>
               </div>
-              <p className="text-gray-200 mb-4">{item.feedback}</p>
+              <p className="text-gray-200 mb-4 italic leading-relaxed">
+                “{item.feedback}”
+              </p>
               <div className="flex items-center">
                 {[...Array(item.rating)].map((_, i) => (
                   <span key={i} className="text-yellow-400 text-lg">
                     ★
                   </span>
                 ))}
-                <span className="ml-2">{item.rating}/5</span>
+                <span className="ml-2 text-gray-300">{item.rating}/5</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Dots */}
+        {/* Dots Navigation */}
         <div className="flex justify-center mt-6 space-x-2">
           {testimonials.map((_, i) => (
             <button
@@ -134,7 +156,7 @@ const ContactForm = () => {
             ></button>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
