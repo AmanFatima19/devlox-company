@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`flex flex-col md:flex-row md:space-x-6 text-[13px] font-bold
+          className={`flex flex-col md:flex-row md:space-x-6 text-[13px] font-light
             md:static absolute bg-black/70 md:bg-transparent backdrop-blur-xl 
             md:backdrop-blur-0 w-full md:w-auto left-0 top-[11vh] md:top-0 
             md:opacity-100 transition-all duration-300 ease-in-out 
@@ -215,7 +215,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="bg-[#ff5521] text-white text-sm px-5 py-2.5 rounded-sm font-sm
+            className="bg-[#ff5521] text-white text-sm px-5 py-2.5 rounded-sm font-xs
               hover:bg-[#ff6b3d] transition-all duration-300 hover:scale-105 
               shadow-md hover:shadow-orange-500/40"
           >
