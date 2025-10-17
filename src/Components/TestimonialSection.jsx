@@ -55,18 +55,17 @@ const TestimonialSection = () => {
         </p>
       </div>
 
-      {/* Auto Sliding Container */}
       <div className="relative w-full overflow-hidden">
         <div
           className="flex gap-8 animate-scroll"
           style={{
-            width: `${testimonials.length * 340}px`, // Adjust width based on cards
+            width: `${testimonials.length * 340}px`,
           }}
         >
           {[...testimonials, ...testimonials].map((t, index) => (
             <div
               key={index}
-              className="w-[320px] flex-shrink-0 p-6 sm:p-8 rounded-xl overflow-hidden 
+              className="w-[320px] flex-shrink-0 p-6 sm:p-8 rounded-xl overflow-hidden my-2
                          border border-white/20 bg-white/10 backdrop-blur-md 
                          shadow-[0_0_25px_rgba(255,85,33,0.08)]
                          hover:scale-[1.03] transition-all duration-500"

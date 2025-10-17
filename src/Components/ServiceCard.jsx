@@ -1,29 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import bgImage from "../assets/backgrounds/servicesSectionBg.png"
+import React from "react";
+import { Link } from "react-router-dom";
+import bgImage from "../assets/backgrounds/servicesSectionBg.png";
 
 const ServiceCard = ({ title, icon, services }) => {
   return (
-    <div>
-      <div
-        className="w-full h-[420px] rounded-lg shadow-sm p-5 sm:p-6 
-                   border border-white/20 
-                   backdrop-blur-md bg-white/10 
-                   transition-transform transform hover:scale-[1.03] ease-out duration-500 
-                   flex flex-col justify-between"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+    <div
+      className="flex-shrink-0 p-6 sm:p-8 rounded-xl overflow-hidden my-2
+                         border border-white/20 bg-white/10 
+                       
+                         hover:scale-[1.03] transition-all duration-500"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80"></div>
+
+      <div className="relative z-10 flex flex-col justify-between h-full p-5 sm:p-6 text-white">
         <div>
           <div className="flex items-center mb-3">
             {icon}
-            <h5 className="text-lg sm:text-xl font-semibold text-white ml-1">
-              {title}
-            </h5>
+            <h5 className="text-lg sm:text-xl font-semibold ml-2">{title}</h5>
           </div>
 
           <p className="text-sm text-gray-300 mb-3">
@@ -47,11 +46,11 @@ const ServiceCard = ({ title, icon, services }) => {
             ))}
           </ul>
         </div>
-
-       
       </div>
-    </div>
-  )
-}
 
-export default ServiceCard
+      <div className="absolute inset-0 rounded-2xl pointer-events-none bg-gradient-to-tr from-[#ff5521]/5 via-transparent to-[#ff5521]/5 opacity-40"></div>
+    </div>
+  );
+};
+
+export default ServiceCard;

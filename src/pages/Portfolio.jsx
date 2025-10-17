@@ -29,7 +29,7 @@ const Portfolio = () => {
       <div className=' overflow-hidden relative  h-[40vh] md:h-[60vh] flex-col  justify-center items-center'>
         <img src={mainImage} alt="" className=' h-full w-auto md:w-full md:h-full object-cover object-center ' />
 
-        <div className='absolute left-5 top-0 flex flex-col  w-full h-full  px-6 md:pd-8 flex-col items-center justify-center'>
+        <div className='absolute left-5 top-0 flex w-full h-full  px-6 md:pd-8 flex-col items-center justify-center'>
         <h1 className=' font-extrabold 
           text-6xl sm:text-3xl md:text-5xl lg:text-6xl 
           w-[85%] md:w-[60%] lg:w-[45%] text-white text-center'>OUR PORTFOLIO</h1>
