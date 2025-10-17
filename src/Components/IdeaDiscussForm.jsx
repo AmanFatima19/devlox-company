@@ -75,7 +75,7 @@ const IdeaDiscussForm = () => {
     <section
       className="relative flex items-center justify-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden text-white"
       style={{
-        backgroundImage: `url('idea-bg.png')`,
+        backgroundImage: `url("idea-bg.png")`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -92,7 +92,6 @@ const IdeaDiscussForm = () => {
         bg-white/10 backdrop-blur-2xl border border-white/20 
         p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-300"
       >
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,8 +102,12 @@ const IdeaDiscussForm = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 text-white">
             Let’s Discuss Your Idea
           </h2>
-          <p className="text-[#ff5521] sm:text-base md:text-lg mb-8 max-w-2xl mx-auto" style={{fontSize:'14px'}}>
-            Tell us a bit about your project, and we’ll help you bring your vision to life.
+          <p
+            className="text-[#ff5521] sm:text-base md:text-lg mb-8 max-w-2xl mx-auto"
+            style={{ fontSize: "14px" }}
+          >
+            Tell us a bit about your project, and we’ll help you bring your
+            vision to life.
           </p>
         </motion.div>
 
@@ -117,14 +120,24 @@ const IdeaDiscussForm = () => {
           className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6"
         >
           {[
-            { label: "Name", name: "name", type: "text", placeholder: "Your name" },
-            { label: "Email", name: "email", type: "email", placeholder: "you@example.com" },
+            {
+              label: "Name",
+              name: "name",
+              type: "text",
+              placeholder: "Your name",
+            },
+            {
+              label: "Email",
+              name: "email",
+              type: "email",
+              placeholder: "you@example.com",
+            },
           ].map((field, i) => (
             <motion.div
               key={field.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 * i }}
+              transition={{ delay: 0.15 * i }}
               viewport={{ once: true }}
             >
               <label className="block text-sm mb-2 text-gray-300">
@@ -147,7 +160,7 @@ const IdeaDiscussForm = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.25 }}
             viewport={{ once: true }}
             className="relative"
           >
@@ -161,12 +174,24 @@ const IdeaDiscussForm = () => {
               required
               className="w-full p-3 sm:p-3.5 rounded-lg appearance-none bg-white/10 border border-white/20 text-white focus:border-[#ff5521] focus:ring-1 focus:ring-[#ff5521]/30 outline-none transition-all text-sm sm:text-base"
             >
-              <option value="" className="text-black">Select project type</option>
-              <option value="game" className="text-black">Game Development</option>
-              <option value="app" className="text-black">Mobile App</option>
-              <option value="web" className="text-black">Web App / Website</option>
-              <option value="animation" className="text-black">3D / Animation</option>
-              <option value="uiux" className="text-black">UI / UX Design</option>
+              <option value="" className="text-black">
+                Select project type
+              </option>
+              <option value="game" className="text-black">
+                Game Development
+              </option>
+              <option value="app" className="text-black">
+                Mobile App
+              </option>
+              <option value="web" className="text-black">
+                Web App / Website
+              </option>
+              <option value="animation" className="text-black">
+                3D / Animation
+              </option>
+              <option value="uiux" className="text-black">
+                UI / UX Design
+              </option>
             </select>
             <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">
               ▼
@@ -176,7 +201,7 @@ const IdeaDiscussForm = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.35 }}
             viewport={{ once: true }}
             className="relative"
           >
@@ -191,11 +216,21 @@ const IdeaDiscussForm = () => {
               className="w-full p-3 sm:p-3.5 rounded-lg appearance-none bg-white/10 border border-white/20 text-white focus:border-[#ff5521] focus:ring-1 focus:ring-[#ff5521]/30 outline-none transition-all text-sm sm:text-base"
             >
               <option value="">Select your budget</option>
-              <option value="lt15k" className="text-black">$ &lt; 15k</option>
-              <option value="15k-40k" className="text-black">$ 15k - 40k</option>
-              <option value="40k-100k" className="text-black">$ 40k - 100k</option>
-              <option value="100k-200k" className="text-black">$ 100k - 200k</option>
-              <option value="gt200k" className="text-black">$ &gt; 200k</option>
+              <option value="lt15k" className="text-black">
+                $ &lt; 15k
+              </option>
+              <option value="15k-40k" className="text-black">
+                $ 15k - 40k
+              </option>
+              <option value="40k-100k" className="text-black">
+                $ 40k - 100k
+              </option>
+              <option value="100k-200k" className="text-black">
+                $ 100k - 200k
+              </option>
+              <option value="gt200k" className="text-black">
+                $ &gt; 200k
+              </option>
             </select>
             <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">
               ▼
@@ -206,7 +241,7 @@ const IdeaDiscussForm = () => {
             className="sm:col-span-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.45 }}
             viewport={{ once: true }}
           >
             <label className="block text-sm mb-2 text-gray-300">
@@ -228,7 +263,7 @@ const IdeaDiscussForm = () => {
             className="sm:col-span-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.55 }}
             viewport={{ once: true }}
           >
             <label className="block text-sm mb-2 text-gray-300">
@@ -259,7 +294,9 @@ const IdeaDiscussForm = () => {
                 ) : (
                   <div className="text-sm text-gray-400">No file chosen</div>
                 )}
-                {fileError && <p className="mt-2 text-xs text-red-400">{fileError}</p>}
+                {fileError && (
+                  <p className="mt-2 text-xs text-red-400">{fileError}</p>
+                )}
               </div>
             </div>
           </motion.div>
