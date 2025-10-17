@@ -44,7 +44,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <div className="bg-black text-white py-16 px-6 sm:px-10 lg:px-16">
+    <div className="bg-black text-white  px-3 sm:px-10 md:py-8 lg:px-16">
       <div className="flex flex-col items-center text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide font-[inter] text-white">
           OUR SERVICES

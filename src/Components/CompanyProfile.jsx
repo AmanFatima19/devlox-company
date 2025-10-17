@@ -33,10 +33,10 @@ const CompanyProfile = () => {
   return (
     <div className='bg-black'>
     <div
-      className="bg-black min-h-screen bg-cover bg-center bg-no-repeat py-16 sm:py-20 md:py-16 px-4 sm:px-8 md:px-16"
+      className="bg-black bg-cover bg-center bg-no-repeat py-8 sm:py-20 md:py-8 px-4 sm:px-8 md:px-16"
     >
       <div className="text-center mb-16 sm:mb-24">
-        <h1 className="max-w-3xl mx-auto text-white text-lg sm:text-3xl md:text-2lg lg:text-3xl font-bold font-[Inter] tracking-wide leading-snug">
+        <h1 className="max-w-3xl mx-auto text-white text-lg sm:text-3xl md:text-2lg md:pt-3 lg:text-3xl font-bold font-[Inter] tracking-wide leading-snug">
           WHAT MAKES KEVURU A LEADING GAME DEVELOPMENT STUDIO
         </h1>
        <p className="text-[#ff5521] text-center mt-1 text-sm sm:text-base ">
