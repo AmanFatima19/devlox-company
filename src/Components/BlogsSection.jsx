@@ -55,7 +55,7 @@ const BlogsSection = () => {
             key={blog.id}
             className="relative rounded-2xl overflow-hidden shadow-md 
                        border border-white/20 bg-white/10 backdrop-blur-md 
-                       hover:border-[#ff5521] transform hover:scale-[1.03] 
+                       transform hover:scale-[1.03] 
                        transition-all duration-500 ease-out cursor-pointer h-[400px]"
           >
             <img

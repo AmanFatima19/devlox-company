@@ -38,34 +38,40 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black text-white py-10 px-6 md:px-16 flex flex-col md:flex-row gap-6">
-      {/* Contact Form */}
-      <div className="bg-black/20 backdrop-blur-xl text-white w-full md:w-1/2 p-6 rounded-2xl shadow-lg border border-white/20">
+    <div className="relative w-full text-white pb-10 pt-16 px-6 md:px-16 flex flex-col md:flex-row gap-6 overflow-hidden">
+
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url("contact-bg.png")` }}
+      ></div>
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      <div className="relative z-10 bg-black/30 backdrop-blur-xl text-white w-full md:w-1/2 p-6 rounded-2xl shadow-lg border border-white/20">
         <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
         <form className="flex flex-col space-y-4">
           <input
             type="text"
             placeholder="Name"
-            className="w-full border border-gray-300 px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-3 py-2 rounded bg-transparent focus:outline-none"
           />
           <input
             type="email"
             placeholder="E-mail"
-            className="w-full border border-gray-300 px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-3 py-2 rounded bg-transparent focus:outline-none"
           />
           <input
             type="text"
             placeholder="Phone"
-            className="w-full border border-gray-300 px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-3 py-2 rounded bg-transparent focus:outline-none"
           />
           <textarea
             placeholder="Message"
             rows={4}
-            className="w-full border border-gray-300 px-3 py-2 rounded"
+            className="w-full border border-gray-300 px-3 py-2 rounded bg-transparent focus:outline-none"
           ></textarea>
 
           <label className="flex items-center space-x-2">
-            <input type="checkbox" className="w-4 h-4" />
+            <input type="checkbox" className="w-4 h-4 accent-[#ff5521]" />
             <span>
               I agree to the{" "}
               <a href="#" className="text-[#ff5521] underline">
@@ -83,8 +89,7 @@ const ContactForm = () => {
         </form>
       </div>
 
-      {/* Testimonials Section */}
-      <div className="w-full md:w-1/2 bg-transparent p-6 rounded-lg relative overflow-hidden">
+      <div className="relative z-10 w-full md:w-1/2 bg-transparent p-6 rounded-lg overflow-hidden">
         <div className="min-h-[260px] relative">
           {testimonials.map((item, index) => (
             <div
@@ -107,7 +112,9 @@ const ContactForm = () => {
               <p className="text-gray-200 mb-4">{item.feedback}</p>
               <div className="flex items-center">
                 {[...Array(item.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                  <span key={i} className="text-yellow-400 text-lg">
+                    ★
+                  </span>
                 ))}
                 <span className="ml-2">{item.rating}/5</span>
               </div>

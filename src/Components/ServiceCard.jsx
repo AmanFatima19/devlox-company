@@ -6,11 +6,11 @@ const ServiceCard = ({ title, icon, services }) => {
   return (
     <div>
       <div
-        className="w-full h-[420px] rounded-2xl shadow-md p-5 sm:p-6 
+        className="w-full h-[420px] rounded-lg shadow-sm p-5 sm:p-6 
                    border border-white/20 
                    backdrop-blur-md bg-white/10 
                    transition-transform transform hover:scale-[1.03] ease-out duration-500 
-                   hover:border-[#ff5521] flex flex-col justify-between"
+                   flex flex-col justify-between"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",

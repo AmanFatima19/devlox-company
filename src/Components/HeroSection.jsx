@@ -39,12 +39,12 @@ const HeroSection = () => {
 
         <div className="my-10">
           <Link
-            to="/"
-            className="bg-[#ff5521] text-white px-7 py-2.5 rounded-sm font-sm
+            to="/idea-discuss"
+            className="bg-[#ff5521] text-white text-sm  px-7 py-2.5 rounded-sm font-sm
               hover:bg-[#ff6b3d] transition-all duration-300 hover:scale-105 
               shadow-md hover:shadow-orange-500/40"
           >
-            Contact Us
+           Let's Discuss Idea
           </Link>
         </div>
       </div>

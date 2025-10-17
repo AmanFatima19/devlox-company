@@ -12,6 +12,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
       <nav className="h-[11vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
 
+        {/* Logo Section */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/">
             <img className="h-[5vh] w-auto mr-2" src={logoicon} alt="Logoicon" />
@@ -20,6 +21,7 @@ const Navbar = () => {
           <Link to="/">
             <img className="h-[3vh] w-auto" src={whitelogo} alt="Logo" />
           </Link>
+
           <div
             className="md:hidden text-2xl cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -28,6 +30,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Menu Items */}
         <ul
           className={`flex flex-col md:flex-row md:space-x-6 text-[15px] font-light 
             md:static absolute bg-black/70 md:bg-transparent backdrop-blur-xl 
@@ -49,22 +52,21 @@ const Navbar = () => {
             </Link>
           </li>
 
+          {/* SERVICES DROPDOWN */}
           <li
-            className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
-            onMouseEnter={() =>
-              window.innerWidth > 768 && setOpenDropdown("services")
-            }
-            onMouseLeave={() =>
-              window.innerWidth > 768 && setOpenDropdown(null)
+            className="relative group cursor-pointer px-6 md:px-0 py-2 md:py-0"
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("services")}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+            onClick={() =>
+              window.innerWidth > 768 &&
+              setOpenDropdown(openDropdown === "services" ? null : "services")
             }
           >
             <span
-              className="hover:text-[#ff5521] transition-colors duration-300 mb-20"
+              className="hover:text-[#ff5521] transition-colors duration-300"
               onClick={() =>
                 window.innerWidth <= 768 &&
-                setOpenDropdown(
-                  openDropdown === "services" ? null : "services"
-                )
+                setOpenDropdown(openDropdown === "services" ? null : "services")
               }
             >
               Services ▾
@@ -72,6 +74,8 @@ const Navbar = () => {
 
             {openDropdown === "services" && (
               <div
+                onMouseEnter={() => setOpenDropdown("services")}
+                onMouseLeave={() => setOpenDropdown(null)}
                 className={`${
                   window.innerWidth <= 768
                     ? "static grid-cols-1 p-4 w-[80%] bg-white/10"
@@ -128,13 +132,14 @@ const Navbar = () => {
             )}
           </li>
 
+          {/* GAMES DROPDOWN */}
           <li
-            className="relative cursor-pointer px-6 md:px-0 py-2 md:py-0"
-            onMouseEnter={() =>
-              window.innerWidth > 768 && setOpenDropdown("games")
-            }
-            onMouseLeave={() =>
-              window.innerWidth > 768 && setOpenDropdown(null)
+            className="relative group cursor-pointer px-6 md:px-0 py-2 md:py-0"
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("games")}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+            onClick={() =>
+              window.innerWidth > 768 &&
+              setOpenDropdown(openDropdown === "games" ? null : "games")
             }
           >
             <span
@@ -149,6 +154,8 @@ const Navbar = () => {
 
             {openDropdown === "games" && (
               <div
+                onMouseEnter={() => setOpenDropdown("games")}
+                onMouseLeave={() => setOpenDropdown(null)}
                 className={`${
                   window.innerWidth <= 768
                     ? "static grid-cols-1 p-4 w-full bg-white/10"
@@ -203,16 +210,17 @@ const Navbar = () => {
           </li>
 
           <li className="px-6 md:px-0 py-2 md:py-0">
-            <Link to="/blog" className="hover:text-[#ff5521] transition-colors duration-300">
+            <Link to="/" className="hover:text-[#ff5521] transition-colors duration-300">
               Blog
             </Link>
           </li>
         </ul>
 
+        {/* Contact Button */}
         <div className="hidden md:block">
           <Link
             to="/contact"
-            className="bg-[#ff5521] text-white px-5 py-2.5 rounded-sm font-sm
+            className="bg-[#ff5521] text-white text-sm px-5 py-2.5 rounded-sm font-sm
               hover:bg-[#ff6b3d] transition-all duration-300 hover:scale-105 
               shadow-md hover:shadow-orange-500/40"
           >

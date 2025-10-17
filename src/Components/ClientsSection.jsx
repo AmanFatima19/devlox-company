@@ -4,7 +4,7 @@ import map from "../assets/map.png";
 const ClientsSection = () => {
   return (
     <div
-      className="bg-black min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-6 sm:px-10 py-10 sm:py-20"
+      className="bg-black bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center px-6 sm:px-10 md:py-10 lg:py-10 sm:py-20"
     >
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-7xl gap-12">
         <div className="text-center lg:text-left lg:w-1/2">
