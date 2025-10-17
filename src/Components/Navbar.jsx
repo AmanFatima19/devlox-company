@@ -91,7 +91,7 @@ const Navbar = () => {
                 className={`${
                   window.innerWidth <= 768
                     ? "static grid-cols-1 p-4 w-[80%] bg-white/10"
-                    : "absolute left-[-200px] top-[40px] w-[1100px] grid-cols-5 p-8"
+                    : "absolute left-[-200px] top-[40px] w-[1100px] grid-cols-5 px-8 py-5"
                 } grid gap-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg 
                 text-white text-[14px] font-light rounded-2xl transition-all duration-300`}
                 onMouseEnter={() => {
@@ -112,10 +112,10 @@ const Navbar = () => {
                     Web Development
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/wordpress">WordPress Website</Link></li>
-                    <li><Link to="/ecommerce">Ecommerce Website</Link></li>
-                    <li><Link to="/matrimonial">Matrimonial Website</Link></li>
-                    <li><Link to="/designing">Web Designing</Link></li>
+                    <li><Link to="/wordpress" className="hover:text-[#ff5521]">WordPress Website</Link></li>
+                    <li><Link to="/ecommerce" className="hover:text-[#ff5521]">Ecommerce Website</Link></li>
+                    <li><Link to="/matrimonial" className="hover:text-[#ff5521]">Matrimonial Website</Link></li>
+                    <li><Link to="/designing" className="hover:text-[#ff5521]">Web Designing</Link></li>
                   </ul>
                 </div>
 
@@ -125,10 +125,10 @@ const Navbar = () => {
                     App Development
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/android-app">Android App</Link></li>
-                    <li><Link to="/cross-platform">Cross-Platform</Link></li>
-                    <li><Link to="/dapp">dApp Development</Link></li>
-                    <li><Link to="/api">API Development</Link></li>
+                    <li><Link to="/android-app" className="hover:text-[#ff5521]">Android App</Link></li>
+                    <li><Link to="/cross-platform" className="hover:text-[#ff5521]">Cross-Platform</Link></li>
+                    <li><Link to="/dapp" className="hover:text-[#ff5521]">dApp Development</Link></li>
+                    <li><Link to="/api" className="hover:text-[#ff5521]">API Development</Link></li>
                   </ul>
                 </div>
 
@@ -138,9 +138,9 @@ const Navbar = () => {
                     Software Development
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/school-software">School Management</Link></li>
-                    <li><Link to="/hotel-software">Hotel Management</Link></li>
-                    <li><Link to="/hrm">HRM Software</Link></li>
+                    <li><Link to="/school-software" className="hover:text-[#ff5521]">School Management</Link></li>
+                    <li><Link to="/hotel-software" className="hover:text-[#ff5521]">Hotel Management</Link></li>
+                    <li><Link to="/hrm" className="hover:text-[#ff5521]">HRM Software</Link></li>
                   </ul>
                 </div>
 
@@ -150,9 +150,9 @@ const Navbar = () => {
                     Digital Marketing
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/seo">SEO Services</Link></li>
-                    <li><Link to="/smo">SMO Services</Link></li>
-                    <li><Link to="/content">Content Marketing</Link></li>
+                    <li><Link to="/seo" className="hover:text-[#ff5521]">SEO Services</Link></li>
+                    <li><Link to="/smo" className="hover:text-[#ff5521]">SMO Services</Link></li>
+                    <li><Link to="/content" className="hover:text-[#ff5521]">Content Marketing</Link></li>
                   </ul>
                 </div>
 
@@ -162,9 +162,9 @@ const Navbar = () => {
                     Branding
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/logo">Logo Design</Link></li>
-                    <li><Link to="/branding">Brand Identity</Link></li>
-                    <li><Link to="/ads">Ad Campaigns</Link></li>
+                    <li><Link to="/logo" className="hover:text-[#ff5521]">Logo Design</Link></li>
+                    <li><Link to="/branding" className="hover:text-[#ff5521]">Brand Identity</Link></li>
+                    <li><Link to="/ads" className="hover:text-[#ff5521]">Ad Campaigns</Link></li>
                   </ul>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const Navbar = () => {
                 className={`${
                   window.innerWidth <= 768
                     ? "static grid-cols-1 p-4 w-full bg-white/10"
-                    : "absolute left-[-100px] top-[40px] w-[700px] grid-cols-3 p-8"
+                    : "absolute left-[-100px] top-[40px] w-[700px] grid-cols-3 px-8 py-5"
                 } grid gap-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg 
                 text-white text-[14px] font-light rounded-2xl transition-all duration-300`}
               >
@@ -221,9 +221,9 @@ const Navbar = () => {
                     Mobile Games
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/unity-games">Unity Games</Link></li>
-                    <li><Link to="/2d-games">2D Game Development</Link></li>
-                    <li><Link to="/3d-games">3D Game Development</Link></li>
+                    <li><Link to="/unity-games" className="hover:text-[#ff5521]">Unity Games</Link></li>
+                    <li><Link to="/2d-games" className="hover:text-[#ff5521]">2D Game Development</Link></li>
+                    <li><Link to="/3d-games" className="hover:text-[#ff5521]">3D Game Development</Link></li>
                   </ul>
                 </div>
 
@@ -233,8 +233,8 @@ const Navbar = () => {
                     PC / Web Games
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/web-games">Web Browser Games</Link></li>
-                    <li><Link to="/metaverse-games">Metaverse Games</Link></li>
+                    <li><Link to="/web-games" className="hover:text-[#ff5521]">Web Browser Games</Link></li>
+                    <li><Link to="/metaverse-games" className="hover:text-[#ff5521]">Metaverse Games</Link></li>
                   </ul>
                 </div>
 
@@ -244,8 +244,8 @@ const Navbar = () => {
                     Console / VR
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/vr-games">Virtual Reality Games</Link></li>
-                    <li><Link to="/ar-games">Augmented Reality Games</Link></li>
+                    <li><Link to="/vr-games" className="hover:text-[#ff5521]">Virtual Reality Games</Link></li>
+                    <li><Link to="/ar-games" className="hover:text-[#ff5521]">Augmented Reality Games</Link></li>
                   </ul>
                 </div>
               </div>
