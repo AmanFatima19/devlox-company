@@ -10,9 +10,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
-      <nav className="h-[11vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
+      <nav className="h-[10vh] flex justify-between items-center px-6 md:px-10 text-white font-[Inter] relative">
 
-        {/* Logo Section */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <Link to="/">
             <img className="h-[5vh] w-auto mr-2" src={logoicon} alt="Logoicon" />
@@ -30,9 +29,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Menu Items */}
         <ul
-          className={`flex flex-col md:flex-row md:space-x-6 text-[15px] font-light 
+          className={`flex flex-col md:flex-row md:space-x-6 text-[13px] font-bold
             md:static absolute bg-black/70 md:bg-transparent backdrop-blur-xl 
             md:backdrop-blur-0 w-full md:w-auto left-0 top-[11vh] md:top-0 
             md:opacity-100 transition-all duration-300 ease-in-out 
@@ -45,14 +43,13 @@ const Navbar = () => {
         >
           <li className="px-6 md:px-0 py-2 md:py-0">
             <Link
-              to="/about"
+              to="/"
               className="hover:text-[#ff5521] transition-colors duration-300"
             >
-              About
+            Home
             </Link>
           </li>
 
-          {/* SERVICES DROPDOWN */}
           <li
             className="relative group cursor-pointer px-6 md:px-0 py-2 md:py-0"
             onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("services")}
@@ -132,7 +129,6 @@ const Navbar = () => {
             )}
           </li>
 
-          {/* GAMES DROPDOWN */}
           <li
             className="relative group cursor-pointer px-6 md:px-0 py-2 md:py-0"
             onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown("games")}
@@ -216,7 +212,6 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Contact Button */}
         <div className="hidden md:block">
           <Link
             to="/contact"
