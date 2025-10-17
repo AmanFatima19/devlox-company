@@ -31,7 +31,6 @@ const testimonials = [
 const ContactForm = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto change testimonial every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -49,10 +48,8 @@ const ContactForm = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* ✅ Permanent dark overlay (no animation) */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
-      {/* ✅ Animated Contact Form */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -102,7 +99,6 @@ const ContactForm = () => {
         </form>
       </motion.div>
 
-      {/* ✅ Animated Testimonials Section */}
       <motion.div
         initial={{ opacity: 0, x: 60 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -144,7 +140,6 @@ const ContactForm = () => {
           ))}
         </div>
 
-        {/* Dots Navigation */}
         <div className="flex justify-center mt-6 space-x-2">
           {testimonials.map((_, i) => (
             <button

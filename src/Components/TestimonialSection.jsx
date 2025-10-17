@@ -94,7 +94,6 @@ const TestimonialSection = () => {
         </div>
       </div>
 
-      {/* Background gradient overlay (optional aesthetic) */}
       <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0b0b0b] to-transparent pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0b0b0b] to-transparent pointer-events-none" />
     </section>

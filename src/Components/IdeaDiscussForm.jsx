@@ -70,11 +70,17 @@ const IdeaDiscussForm = () => {
   };
 
   return (
-    <section className="relative flex items-center justify-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden text-white">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-black to-[#1a1a1a] opacity-95"></div>
+    <section
+      className="relative flex items-center justify-center py-12 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden text-white"
+      style={{
+        backgroundImage: `url('idea-bg.png')`, 
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
-      {/* Form Container */}
       <motion.div
         initial={{ opacity: 0, y: 50, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -84,7 +90,6 @@ const IdeaDiscussForm = () => {
         bg-white/10 backdrop-blur-2xl border border-white/20 
         p-6 sm:p-8 md:p-10 lg:p-12 transition-all duration-300"
       >
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +105,6 @@ const IdeaDiscussForm = () => {
           </p>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0 }}
@@ -109,33 +113,31 @@ const IdeaDiscussForm = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6"
         >
-          {/* Name & Email */}
-          {[
-            { label: "Name", name: "name", type: "text", placeholder: "Your name" },
-            { label: "Email", name: "email", type: "email", placeholder: "you@example.com" },
-          ].map((field, i) => (
-            <motion.div
-              key={field.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 * i }}
-              viewport={{ once: true }}
-            >
-              <label className="block text-sm mb-2 text-gray-300">{field.label}</label>
-              <input
-                type={field.type}
-                name={field.name}
-                placeholder={field.placeholder}
-                value={formData[field.name]}
-                onChange={handleChange}
-                required
-                className="w-full p-3 sm:p-3.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 
+          {[{ label: "Name", name: "name", type: "text", placeholder: "Your name" },
+            { label: "Email", name: "email", type: "email", placeholder: "you@example.com" }].map(
+            (field, i) => (
+              <motion.div
+                key={field.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 * i }}
+                viewport={{ once: true }}
+              >
+                <label className="block text-sm mb-2 text-gray-300">{field.label}</label>
+                <input
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-3 sm:p-3.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 
                 focus:border-[#ff5521] focus:ring-1 focus:ring-[#ff5521]/30 outline-none transition-all text-sm sm:text-base"
-              />
-            </motion.div>
-          ))}
+                />
+              </motion.div>
+            )
+          )}
 
-          {/* Project Type */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +163,6 @@ const IdeaDiscussForm = () => {
             <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">▼</div>
           </motion.div>
 
-          {/* Budget */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +188,6 @@ const IdeaDiscussForm = () => {
             <div className="absolute right-3 top-1/2 -translate-y-[6px] text-[#ff5521] pointer-events-none">▼</div>
           </motion.div>
 
-          {/* Message */}
           <motion.div
             className="sm:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -208,7 +208,6 @@ const IdeaDiscussForm = () => {
             />
           </motion.div>
 
-          {/* File Upload */}
           <motion.div
             className="sm:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -249,7 +248,6 @@ const IdeaDiscussForm = () => {
             </div>
           </motion.div>
 
-          {/* Submit Button */}
           <motion.div
             className="sm:col-span-2 flex justify-center mt-6"
             whileHover={{ scale: 1.05 }}
