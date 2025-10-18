@@ -4,7 +4,7 @@ import ServiceIntroSection from "../Components/ServiceIntroSection";
 import ServiceCategorySection from "../Components/ServiceCategorySection";
 import Technologies from "../Components/Technologies";
 import IdeaDiscussForm from "../Components/IdeaDiscussForm";
-import DevelopmentProcess from "../../../DevelopmentProcess";
+import DevelopmentProcess from "../Components/DevelopmentProcess";
 
 const Services = () => {
   return (
