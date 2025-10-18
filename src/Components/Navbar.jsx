@@ -115,7 +115,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* App Development */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     App Development
@@ -128,7 +127,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Software Development */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Software Development
@@ -140,7 +138,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Digital Marketing */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Digital Marketing
@@ -152,7 +149,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Branding */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Branding
@@ -211,19 +207,17 @@ const Navbar = () => {
                 } grid gap-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg 
                 text-white text-[14px] font-light rounded-2xl transition-all duration-300`}
               >
-                {/* Mobile Games */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Mobile Games
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/unity-games" className="hover:text-[#ff5521]">Unity Games</Link></li>
+                    <li><Link to="/service" className="hover:text-[#ff5521]">Unity Games</Link></li>
                     <li><Link to="/2d-games" className="hover:text-[#ff5521]">2D Game Development</Link></li>
                     <li><Link to="/3d-games" className="hover:text-[#ff5521]">3D Game Development</Link></li>
                   </ul>
                 </div>
 
-                {/* PC / Web Games */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     PC / Web Games
@@ -234,7 +228,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Console / VR */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Console / VR
@@ -248,7 +241,6 @@ const Navbar = () => {
             )}
           </li>
 
-          {/* Other Simple Links */}
           <li className="px-6 md:px-0 py-2 md:py-0">
             <Link to="/portfolio" className="hover:text-[#ff5521] transition-colors duration-300">
               Portfolio

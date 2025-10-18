@@ -32,7 +32,7 @@ const Technologies = () => {
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             repeat: Infinity,
-            duration: 150,
+            duration: 30,
             ease: "linear",
           }}
         >
