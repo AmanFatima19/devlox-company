@@ -8,12 +8,10 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // helper: clears any running close timer
   const clearDropdownTimeout = () => {
     if (window.dropdownTimeout) clearTimeout(window.dropdownTimeout);
   };
 
-  // closes dropdown if window resized below breakpoint
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) setOpenDropdown(null);
@@ -55,7 +53,6 @@ const Navbar = () => {
             } md:visible
             md:flex-grow md:justify-start md:ml-8`}
         >
-          {/* Simple Links */}
           <li className="px-6 md:px-0 py-2 md:py-0">
             <Link to="/about" className="hover:text-[#ff5521] transition-colors duration-300">
               About
@@ -106,16 +103,15 @@ const Navbar = () => {
                   }
                 }}
               >
-                {/* Web Development */}
                 <div>
                   <h3 className="font-semibold text-[16px] mb-2 border-b-2 border-[#ff5521] inline-block">
                     Web Development
                   </h3>
                   <ul className="space-y-1">
-                    <li><Link to="/wordpress" className="hover:text-[#ff5521]">WordPress Website</Link></li>
-                    <li><Link to="/ecommerce" className="hover:text-[#ff5521]">Ecommerce Website</Link></li>
-                    <li><Link to="/matrimonial" className="hover:text-[#ff5521]">Matrimonial Website</Link></li>
-                    <li><Link to="/designing" className="hover:text-[#ff5521]">Web Designing</Link></li>
+                    <li><Link to="/service" className="hover:text-[#ff5521]">WordPress Website</Link></li>
+                    <li><Link to="/service" className="hover:text-[#ff5521]">Ecommerce Website</Link></li>
+                    <li><Link to="/service" className="hover:text-[#ff5521]">Matrimonial Website</Link></li>
+                    <li><Link to="/service" className="hover:text-[#ff5521]">Web Designing</Link></li>
                   </ul>
                 </div>
 

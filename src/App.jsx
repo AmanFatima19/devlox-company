@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar'
 import Portfolio from './pages/Portfolio'
 import IdeaDiscussForm from './Components/IdeaDiscussForm'
 import ContactForm from './Components/ContactForm'
+import Services from './pages/Services'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/idea-discuss" element={<IdeaDiscussForm />} />
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="/service" element={<Services />} />
       </Routes>
       <Footer/>
     </Router>
